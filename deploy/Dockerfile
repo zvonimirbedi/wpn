@@ -2,7 +2,7 @@ FROM ubuntu
 
 RUN apt-get update
 RUN apt-get install nano
-RUN apt-get install openjdk-16-jdk --install-recommends -y
+RUN apt-get install openjdk-17-jdk --install-recommends -y
 ENV MALLOC_ARENA_MAX 4
 
 COPY build/libs/*.jar trader.jar
