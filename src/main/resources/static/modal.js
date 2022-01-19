@@ -15,7 +15,7 @@ function modal(){
 
                 /* The Modal */
                 var modal = document.createElement("DIV");
-                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.60);  /* Black w/ opacity */ backdrop-filter: blur(8px);';
+                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.60);  /* Black w/ opacity */ backdrop-filter: blur(12px);';
                 modal.setAttribute("id", "myModal");
                 document.body.appendChild(modal);
 
@@ -24,6 +24,13 @@ function modal(){
                 modalContent.style.cssText = 'position: fixed; bottom: 0; background-color: #E1E5EE; width: 100%; -webkit-animation-name: slideIn; -webkit-animation-duration: 0.4s; animation-name: slideIn; animation-duration: 0.4s;';
                 modal.appendChild(modalContent);
 
+                /* Play button */
+                var playImage = document.createElement("IMG");
+                playImage.style.cssText = 'opacity: 0.75; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 150px;';
+                playImage.setAttribute("src", "play.png");
+                playImage.setAttribute("onclick", "requestNotificationPermission();");
+                modal.appendChild(playImage);
+
                 /* Modal content - Header */
                 var modalContentHeader = document.createElement("DIV");
                 modalContentHeader.style.cssText = 'padding: 2px 2px; background-color: #2A324B; color: white;';
@@ -31,7 +38,7 @@ function modal(){
 
                 /* Modal content - Header Close */
                 var modalContentHeaderClose = document.createElement("DIV");
-                modalContentHeaderClose.style.cssText = 'color: white; float: right; font-size: 28px; font-weight: bold;';
+                modalContentHeaderClose.style.cssText = 'padding: 0px 5px 0px 5px; color: white; float: right; font-size: 28px; font-weight: bold;';
                 modalContentHeaderClose.innerHTML = "&times;";
                 modalContentHeaderClose.setAttribute("id", "modalContentHeaderClose");
                 modalContentHeaderClose.setAttribute("onMouseOver", "this.style.color='#F7C59F'; this.style.cursor='pointer';");
