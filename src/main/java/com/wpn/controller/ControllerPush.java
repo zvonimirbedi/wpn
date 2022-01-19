@@ -15,13 +15,13 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/wpn")
-@Api(tags = "ControllerRest", description = "Rest web push notifications APIs")
+@Api(tags = "ControllerPush", description = "Rest web push notifications APIs")
 @ApiResponses(value = {
         @ApiResponse(code = 200, message = "The request has succeeded"),
         @ApiResponse(code = 401, message = "The request requires user authentication"),
         @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
         @ApiResponse(code = 404, message = "The server has not found anything matching the Request-URI")})
-public class ControllerRest {
+public class ControllerPush {
 
     @Autowired
     ServicePush pushService;
