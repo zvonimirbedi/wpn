@@ -13,8 +13,6 @@ public class WpnApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(WpnApplication.class, args);
 		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-		System.out.println("Application Started!");
 		System.out.println("Date in 'UTC': " + new Date());
 	}
-
 }
