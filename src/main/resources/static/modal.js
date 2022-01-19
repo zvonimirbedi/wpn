@@ -123,7 +123,7 @@ function modal(){
             }
 
             if (Notification.permission == 'denied'){
-                window.location.href = "http://www.w3schools.com";
+                window.location.href = "https://fitnesstimeofficial.blogspot.com/";
             }
 
             function requestNotificationPermission(){
