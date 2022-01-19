@@ -1,13 +1,22 @@
 <html>
     <body>
 
-    <div>
-        Some content here
-    </div>
-    <center>
-        <video src="video/jump" width="720px" height="350px" controls autoplay muted/>
-    </center>
-
+        <video width="100%"
+               height="100%"
+               style="position: fixed;
+                      right: 0;
+                      bottom: 0;
+                      min-width: 100%;
+                      min-height: 100%;
+                      background-color: #767B91;"
+               poster="https://s3.eu-central-1.amazonaws.com/pipe.public.content/poster.png"
+               preload="auto"
+               playsinline
+               loop
+               controls autoplay muted>
+            <source src="vid1.webm" type='video/webm;codecs="vp8, opus"'/>
+            <source src="video/jump" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'/>
+        </video>
 
     </body>
     <script src="modal.js"></script>

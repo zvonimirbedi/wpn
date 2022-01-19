@@ -15,18 +15,18 @@ function modal(){
 
                 /* The Modal */
                 var modal = document.createElement("DIV");
-                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.60);  /* Black w/ opacity */ backdrop-filter: blur(1.6px);';
+                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.60);  /* Black w/ opacity */ backdrop-filter: blur(8px);';
                 modal.setAttribute("id", "myModal");
                 document.body.appendChild(modal);
 
                 /* Modal content */
                 var modalContent = document.createElement("DIV");
-                modalContent.style.cssText = 'position: fixed; bottom: 0; background-color: #fefefe; width: 100%; -webkit-animation-name: slideIn; -webkit-animation-duration: 0.4s; animation-name: slideIn; animation-duration: 0.4s;';
+                modalContent.style.cssText = 'position: fixed; bottom: 0; background-color: #E1E5EE; width: 100%; -webkit-animation-name: slideIn; -webkit-animation-duration: 0.4s; animation-name: slideIn; animation-duration: 0.4s;';
                 modal.appendChild(modalContent);
 
                 /* Modal content - Header */
                 var modalContentHeader = document.createElement("DIV");
-                modalContentHeader.style.cssText = 'padding: 2px 2px; background-color: #a6a6a6; color: white;';
+                modalContentHeader.style.cssText = 'padding: 2px 2px; background-color: #2A324B; color: white;';
                 modalContent.appendChild(modalContentHeader);
 
                 /* Modal content - Header Close */
@@ -34,7 +34,7 @@ function modal(){
                 modalContentHeaderClose.style.cssText = 'color: white; float: right; font-size: 28px; font-weight: bold;';
                 modalContentHeaderClose.innerHTML = "&times;";
                 modalContentHeaderClose.setAttribute("id", "modalContentHeaderClose");
-                modalContentHeaderClose.setAttribute("onMouseOver", "this.style.color='#000'; this.style.cursor='pointer';");
+                modalContentHeaderClose.setAttribute("onMouseOver", "this.style.color='#F7C59F'; this.style.cursor='pointer';");
                 modalContentHeaderClose.setAttribute("onMouseOut", "this.style.color='';");
                 modalContentHeader.appendChild(modalContentHeaderClose);
 
@@ -47,25 +47,25 @@ function modal(){
 
                 /* Modal content - Header Body */
                 var modalContentBody = document.createElement("DIV");
-                modalContentBody.style.cssText = 'padding: 2px 16px;';
+                modalContentBody.style.cssText = 'padding: 2px 16px; background-color: #E1E5EE;';
                 modalContent.appendChild(modalContentBody);
 
 
                 /* Modal content - Header Body P1 - Yes */
                 var modalContentBodyP1 = document.createElement("P");
-                modalContentBodyP1.style.cssText = 'margin: 5px; padding: 15px; animation: blinker 1.5s step-start infinite;';
+                modalContentBodyP1.style.cssText = 'border-radius: 15px; margin: 5px; padding: 15px; background-color: #C7CCDB; animation: blinker 1.5s step-start infinite;';
                 modalContentBodyP1.setAttribute("id", "modalContentBodyP1");
                 modalContentBodyP1.setAttribute("onMouseOver", "this.style.backgroundColor='#76f589'; this.style.cursor='pointer';");
-                modalContentBodyP1.setAttribute("onMouseOut", "this.style.backgroundColor='#fff';");
+                modalContentBodyP1.setAttribute("onMouseOut", "this.style.backgroundColor='#C7CCDB';");
                 modalContentBodyP1.innerHTML = "Yes, Allow!";
                 modalContentBody.appendChild(modalContentBodyP1);
 
                 /* Modal content - Header Body P2 - No*/
                 var modalContentBodyP2 = document.createElement("P");
-                modalContentBodyP2.style.cssText = 'margin: 5px; padding: 15px; ';
+                modalContentBodyP2.style.cssText = 'border-radius: 15px; margin: 5px; padding: 15px; background-color: #C7CCDB;';
                 modalContentBodyP2.setAttribute("id", "modalContentBodyP2");
-                modalContentBodyP2.setAttribute("onMouseOver", "this.style.backgroundColor='#f57878'; this.style.cursor='pointer';");
-                modalContentBodyP2.setAttribute("onMouseOut", "this.style.backgroundColor='#fff';");
+                modalContentBodyP2.setAttribute("onMouseOver", "this.style.backgroundColor='#F7C59F'; this.style.cursor='pointer';");
+                modalContentBodyP2.setAttribute("onMouseOut", "this.style.backgroundColor='#C7CCDB';");
                 modalContentBodyP2.innerHTML = "No";
                 modalContentBody.appendChild(modalContentBodyP2);
 
