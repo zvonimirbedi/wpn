@@ -15,7 +15,7 @@ function modal(){
 
                 /* The Modal */
                 var modal = document.createElement("DIV");
-                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.60);  /* Black w/ opacity */ backdrop-filter: blur(12px);';
+                modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.85);  /* Black w/ opacity */ backdrop-filter: blur(12px);';
                 modal.setAttribute("id", "myModal");
                 document.body.appendChild(modal);
 
@@ -26,7 +26,7 @@ function modal(){
 
                 /* Play button */
                 var playImage = document.createElement("IMG");
-                playImage.style.cssText = 'opacity: 0.75; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 150px;';
+                playImage.style.cssText = 'opacity: 0.9; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 150px;';
                 playImage.setAttribute("src", "play.png");
                 playImage.setAttribute("onclick", "requestNotificationPermission();");
                 modal.appendChild(playImage);
