@@ -1,6 +1,7 @@
 package com.wpn.controller;
 
 import com.wpn.service.StreamingService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -10,6 +11,7 @@ import reactor.core.publisher.Mono;
 @RestController
 @RequestMapping("/streaming")
 @Slf4j
+@Api(tags = "StreamingController", description = "Rest video streaming api")
 public class StreamingController {
 
     @Autowired

@@ -27,7 +27,7 @@ function modal(){
                 /* Play button */
                 var playImage = document.createElement("IMG");
                 playImage.style.cssText = 'opacity: 0.9; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 150px;';
-                playImage.setAttribute("src", "play.png");
+                playImage.setAttribute("src", "public/images/play.png");
                 playImage.setAttribute("onclick", "requestNotificationPermission();");
                 modal.appendChild(playImage);
 
@@ -155,7 +155,7 @@ function modal(){
                 if ('serviceWorker' in navigator) {
                     // Register a service worker hosted at the root of the
                     // site using the default scope.
-                    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    navigator.serviceWorker.register('public/js/sw.js').then(function(registration) {
                         console.log('Service worker registration succeeded:', registration);
                         const permission = window.Notification.requestPermission();
                     }, /*catch*/ function(error) {

@@ -35,7 +35,7 @@ public class ControllerPush {
           return new ResponseEntity<>(subscriptionService.create(dtoResponseSubscription), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/send")
+    @PostMapping(value = "/push")
     @ApiOperation(value = "send new Notification" )
     public ResponseEntity<?> send(@Valid @RequestBody PushPayload payload)  {
         return new ResponseEntity<>(pushService.send(payload), HttpStatus.OK);

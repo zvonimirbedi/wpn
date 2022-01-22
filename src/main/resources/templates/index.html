@@ -1,4 +1,8 @@
 <html>
+    <head>
+        <title></title>
+        <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+    </head>
     <body>
 
         <video width="100%"
@@ -9,15 +13,14 @@
                       min-width: 100%;
                       min-height: 100%;
                       background-color: #767B91;"
-               poster="play.png"
+               poster="public/images/play.png"
                preload="auto"
                playsinline
                loop
                controls autoplay muted>
-            <source src="vid1.webm" type='video/webm;codecs="vp8, opus"'/>
-            <source src="streaming/video/jump" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'/>
+            <source src="/streaming/video/jump" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'/>
         </video>
 
     </body>
-    <script src="modal.js"></script>
+    <script src="/public/js/modal.js"></script>
 </html>
