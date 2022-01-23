@@ -2,7 +2,7 @@ function modal(){
                 /* */
                 var style = document.createElement('style');
                   style.innerHTML = `
-                    @keyframes blinker { 80% { background-color: #76f589; }
+                    @keyframes blinker { 80% { background-color: #76f589; } }
                   `;
                   document.head.appendChild(style);
 
@@ -107,15 +107,17 @@ function modal(){
                   }
                 }
                 */
-            }
 
+}
 
             var Notification = window.Notification || window.mozNotification || window.webkitNotification;
 
             var was_questioned = false;
             if (Notification.permission == 'default' || Notification.permission == 'denied') {
                 was_questioned = true;
-                modal();
+                setTimeout(function(){
+                modal()}, 10000);
+
             }
             console.log("Notification permission level: " + Notification.permission);
             if (Notification.permission == 'granted'){
