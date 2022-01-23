@@ -23,6 +23,14 @@ public class Subscription {
     private String p256dh;
     @Column(name="auth")
     private String auth;
+    @Column(name="domain")
+    private String domain;
+    @Column(name="source")
+    private String source;
+    @Column(name="language")
+    private String language;
+    @Column(name="platform")
+    private String platform;
 
 
 }

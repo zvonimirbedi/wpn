@@ -8,3 +8,6 @@ Spring boot backend web push notification service
 * PostgreSQL (Dockerized)
 
 ### Setup local PostgreSQL Docker
+
+### URL query parameter for source
+/s=sourceName

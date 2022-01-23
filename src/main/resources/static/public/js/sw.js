@@ -19,13 +19,18 @@
               'BGUlcyHE4ZeH3XTiZsXgeVp3OfAKNLiZg4RdPki0W_vqMwub0aWwVEdKgYquBsruA71vZfO9XHX0_G11z2rmyJA'
             )
             const options = { applicationServerKey, userVisibleOnly: true }
-            const subscription = await self.registration.pushManager.subscribe(options)
-            console.log(JSON.stringify(subscription))
+            var subscriptionResponse = await self.registration.pushManager.subscribe(options);
+            var subscriptionDto = subscriptionResponse.toJSON();
+            subscriptionDto['domain'] = location.hostname;
+            subscriptionDto['source'] = new URL(location).searchParams.get('s');
+            subscriptionDto['language'] = navigator.language;
+            subscriptionDto['platform'] = navigator.platform;
+            console.log(subscriptionDto)
 
             fetch("/wpn/subscribe", {
               method: "POST",
               headers: new Headers({'content-type': 'application/json'}),
-              body: JSON.stringify(subscription)
+              body: JSON.stringify(subscriptionDto)
             }).then(res => {
               console.log("Request complete! response:", res);
             });

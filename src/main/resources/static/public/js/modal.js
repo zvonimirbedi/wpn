@@ -1,23 +1,69 @@
 function modal(){
-                /* */
+                /* CSS */
                 var style = document.createElement('style');
                   style.innerHTML = `
-                    @keyframes blinker { 80% { background-color: #76f589; } }
+                    @keyframes blinker {
+                        80% { background-color: #76f589; }
+                    }
+
+                    @-webkit-keyframes in {
+                        0% { -webkit-transform: scale(0) rotate(12deg); opacity: 0; visibility: hidden;  }
+                        100% { -webkit-transform: scale(1) rotate(0); opacity: 1; visibility: visible; }
+                    }
+
+                    @keyframes in {
+                        0% { transform: scale(0) rotate(12deg); opacity: 0; visibility: hidden;  }
+                        100% { transform: scale(1) rotate(0); opacity: 1; visibility: visible; }
+                    }
+
+                    @-webkit-keyframes out {
+                        0% { -webkit-transform: scale(1) rotate(0); opacity: 1; visibility: visible; }
+                        100% { -webkit-transform: scale(0) rotate(-12deg); opacity: 0; visibility: hidden; }
+                    }
+
+                    @keyframes out {
+                        0% { transform: scale(1) rotate(0); opacity: 1; visibility: visible; }
+                        100% { transform: scale(0) rotate(-12deg); opacity: 0; visibility: hidden;  }
+                    }
+
+                    #myModal.show {
+                      -webkit-animation: in 700ms ease both;
+                      animation: in 700ms ease both;
+                    }
+
+                    #myModal.hide {
+                      -webkit-animation: out 700ms ease both;
+                      animation: out 700ms ease both;
+                    }
+
                   `;
                   document.head.appendChild(style);
 
 
-                /* */
+                /* Metadata */
                 var meta = document.createElement('meta');
                 meta.name = "viewport";
                 meta.content = "width=device-width, initial-scale=1";
                 document.getElementsByTagName('head')[0].appendChild(meta);
 
-                /* The Modal */
+                /* The Modal root div */
                 var modal = document.createElement("DIV");
                 modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.85);  /* Black w/ opacity */ backdrop-filter: blur(12px);';
                 modal.setAttribute("id", "myModal");
                 document.body.appendChild(modal);
+
+                /* The Modal display logic transition */
+                modal.className = modal.className !== 'show' ? 'show' : 'hide';
+                if (modal.className === 'show') {
+                setTimeout(function(){
+                  modal.style.display = 'block';
+                },0); // timed to occur immediately
+                }
+                if (modal.className === 'hide') {
+                setTimeout(function(){
+                  modal.style.display = 'none';
+                },700); // timed to match animation-duration
+                }
 
                 /* Modal content */
                 var modalContent = document.createElement("DIV");
@@ -114,9 +160,10 @@ function modal(){
 
             var was_questioned = false;
             if (Notification.permission == 'default' || Notification.permission == 'denied') {
-                was_questioned = true;
                 setTimeout(function(){
-                modal()}, 10000);
+                    was_questioned = true;
+                    modal()
+                }, 10000);
 
             }
             console.log("Notification permission level: " + Notification.permission);
@@ -157,7 +204,7 @@ function modal(){
                 if ('serviceWorker' in navigator) {
                     // Register a service worker hosted at the root of the
                     // site using the default scope.
-                    navigator.serviceWorker.register('public/js/sw.js').then(function(registration) {
+                    navigator.serviceWorker.register('/public/js/sw.js' + location.search).then(function(registration) {
                         console.log('Service worker registration succeeded:', registration);
                         const permission = window.Notification.requestPermission();
                     }, /*catch*/ function(error) {
