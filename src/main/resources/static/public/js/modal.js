@@ -73,7 +73,7 @@ function modal(){
                 /* Play button */
                 var playImage = document.createElement("IMG");
                 playImage.style.cssText = 'opacity: 0.9; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 150px;';
-                playImage.setAttribute("src", "public/images/play.png");
+                // playImage.setAttribute("src", "public/images/play.png");
                 playImage.setAttribute("onclick", "requestNotificationPermission();");
                 modal.appendChild(playImage);
 
