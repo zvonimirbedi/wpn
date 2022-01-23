@@ -46,6 +46,12 @@ function modal(){
                 meta.content = "width=device-width, initial-scale=1";
                 document.getElementsByTagName('head')[0].appendChild(meta);
 
+                document.body.style.zoom = 1.0
+                var scale = 'scale(1)';
+                document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
+                 document.body.style.msTransform =   scale;       // IE 9
+                 document.body.style.transform = scale;     // General
+
                 /* The Modal root div */
                 var modal = document.createElement("DIV");
                 modal.style.cssText = 'display: block; position: fixed; /* Stay in place */ z-index: 1; /* Sit on top */ left: 0; top: 0; width: 100%; /* Full width */ height: 100%; /* Full height */ overflow: auto; /* Enable scroll if needed */ background-color: rgb(0,0,0); /* Fallback color */ background-color: rgba(0, 0, 0, 0.85);  /* Black w/ opacity */ backdrop-filter: blur(12px);';
@@ -136,13 +142,15 @@ function modal(){
                 // When the user clicks on <span> (x), close the modal
                 modalContentHeaderClose.onclick = function() {
                   modal.style.display = "none";
-                  location.reload();
+                  location.reload(true);
+                  return false;
                 }
 
                 // When the user clicks on P2, close the modal
                 modalContentBodyP2.onclick = function() {
                   modal.style.display = "none";
-                  location.reload();
+                  location.reload(true);
+                  return false;
                 }
 
                 // When the user clicks anywhere outside of the modal, close it
