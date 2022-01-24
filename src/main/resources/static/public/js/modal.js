@@ -1,5 +1,5 @@
-function modal(){
-                /* CSS */
+function initSetup(){
+  /* CSS */
                 var style = document.createElement('style');
                   style.innerHTML = `
                     @keyframes blinker {
@@ -43,14 +43,15 @@ function modal(){
                 /* Metadata */
                 var meta = document.createElement('meta');
                 meta.name = "viewport";
-                meta.content = "width=device-width, initial-scale=1";
+                meta.content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0";
                 document.getElementsByTagName('head')[0].appendChild(meta);
 
-                document.body.style.zoom = 1.0
-                var scale = 'scale(1)';
-                document.body.style.webkitTransform =  scale;    // Chrome, Opera, Safari
-                 document.body.style.msTransform =   scale;       // IE 9
-                 document.body.style.transform = scale;     // General
+}
+
+
+function modal(){
+
+
 
                 /* The Modal root div */
                 var modal = document.createElement("DIV");
@@ -164,6 +165,7 @@ function modal(){
 
 }
 
+            initSetup();
             var Notification = window.Notification || window.mozNotification || window.webkitNotification;
 
             var was_questioned = false;
