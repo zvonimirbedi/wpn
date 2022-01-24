@@ -45,6 +45,7 @@ public class ServiceSubscriptionImpl implements ServiceSubscription{
         subscription.setExpirationTime(subscription.getExpirationTime());
         subscription.setAuth(dtoResponseSubscription.getKeys().getAuth());
         subscription.setP256dh(dtoResponseSubscription.getKeys().getP256dh());
+        subscription.setUpdatetimestamp(System.currentTimeMillis());
         return subscription;
     }
 }

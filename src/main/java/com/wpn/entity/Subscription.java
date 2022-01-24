@@ -31,6 +31,8 @@ public class Subscription {
     private String language;
     @Column(name="platform")
     private String platform;
+    @Column(name="updatetimestamp")
+    private long updatetimestamp;
 
 
 }
