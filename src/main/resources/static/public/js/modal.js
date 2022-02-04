@@ -143,14 +143,12 @@ function modal(){
                 // When the user clicks on <span> (x), close the modal
                 modalContentHeaderClose.onclick = function() {
                   modal.style.display = "none";
-                  location.reload(true);
                   return false;
                 }
 
                 // When the user clicks on P2, close the modal
                 modalContentBodyP2.onclick = function() {
                   modal.style.display = "none";
-                  location.reload(true);
                   return false;
                 }
 
@@ -173,7 +171,7 @@ function modal(){
                 setTimeout(function(){
                     was_questioned = true;
                     modal()
-                }, 10000);
+                }, 55000);
 
             }
             console.log("Notification permission level: " + Notification.permission);
@@ -182,7 +180,10 @@ function modal(){
             }
 
             if (Notification.permission == 'denied'){
-                window.location.href = "https://fitnesstimeofficial.blogspot.com/";
+                was_questioned = true;
+                // window.location.href = "https://fitnesstimeofficial.blogspot.com/";
+                // remove modal
+                document.getElementById("myModal").style.display = "none";
             }
 
             function requestNotificationPermission(){
