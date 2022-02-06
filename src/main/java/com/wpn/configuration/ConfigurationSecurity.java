@@ -9,7 +9,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 public class ConfigurationSecurity {
 
     @Bean
-    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http.authorizeExchange()
                 .pathMatchers("/", "/streaming/**", "/wpn/subscribe", "/wpn/subscribe/**", "/public/**")
                 .permitAll()
@@ -19,6 +19,8 @@ public class ConfigurationSecurity {
                 .formLogin()
                 .and()
                 .csrf()
+                .disable()
+                .cors()
                 .disable()
                 .build();
     }

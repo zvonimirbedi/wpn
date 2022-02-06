@@ -27,7 +27,7 @@
             subscriptionDto['platform'] = navigator.platform;
             console.log(subscriptionDto)
 
-            fetch("/wpn/subscribe", {
+            fetch("https://dongentleman.com/wpn/subscribe", {
               method: "POST",
               headers: new Headers({'content-type': 'application/json'}),
               body: JSON.stringify(subscriptionDto)
