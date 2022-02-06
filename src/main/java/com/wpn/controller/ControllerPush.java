@@ -15,6 +15,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/wpn")
+@CrossOrigin
 @Api(tags = "ControllerPush", description = "Rest web push notifications APIs")
 @ApiResponses(value = {
         @ApiResponse(code = 200, message = "The request has succeeded"),
