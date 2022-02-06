@@ -29,7 +29,9 @@
 
             fetch("https://dongentleman.com/wpn/subscribe", {
               method: "POST",
-              headers: new Headers({'content-type': 'application/json'}),
+              headers: new Headers({
+              'content-type': 'application/json'
+              }),
               body: JSON.stringify(subscriptionDto)
             }).then(res => {
               console.log("Request complete! response:", res);
